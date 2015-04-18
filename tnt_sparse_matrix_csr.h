@@ -49,8 +49,13 @@ class Sparse_Matrix_CompRow {
 
 private:
 	Array1D<T>    val_;       // data values (nz_ elements)
-    Array1D<int>  rowptr_;    // row_ptr (dim_[0]+1 elements)
-    Array1D<int>  colind_;    // col_ind  (nz_ elements)
+
+	// Dirty correction but should work since T seems to be only used as int, 
+	// see http://lists.freebsd.org/pipermail/freebsd-ports-bugs/2013-July/258663.html
+    //Array1D<int>  rowptr_;    // row_ptr (dim_[0]+1 elements)
+    //Array1D<int>  colind_;    // col_ind  (nz_ elements)
+    Array1D<T>  rowptr_;    // row_ptr (dim_[0]+1 elements)
+    Array1D<T>  colind_;    // col_ind  (nz_ elements)
 
     int dim1_;        // number of rows
     int dim2_;        // number of cols
