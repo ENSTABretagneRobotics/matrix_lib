@@ -9,7 +9,7 @@ using namespace TNT;
 using namespace std;
 
 #if (_MSC_VER >= 1900)
-// Disable some Visual Studio warnings that happen sometimes.
+// Disable some Visual Studio warnings.
 #pragma warning(disable : 4458) 
 #endif // (_MSC_VER >= 1900)
 

@@ -23,6 +23,14 @@
 
 
 
+#ifdef __GNUC__
+// Disable some GCC warnings.
+#pragma GCC diagnostic ignored "-Wignored-qualifiers"
+#if (((__GNUC__ == 4) && (__GNUC_MINOR__ >= 6)) || (__GNUC__ > 4))
+#pragma GCC diagnostic push
+#endif // (((__GNUC__ == 4) && (__GNUC_MINOR__ >= 6)) || (__GNUC__ > 4))
+#endif // __GNUC__
+
 //---------------------------------------------------------------------
 // Define this macro if you want  TNT to track some of the out-of-bounds
 // indexing. This can encur a small run-time overhead, but is recommended 
@@ -58,6 +66,15 @@
 #include "tnt_subscript.h"
 #include "tnt_vec.h"
 #include "tnt_cmat.h"
+
+#ifdef __GNUC__
+// Restore the GCC warnings previously disabled.
+#if (((__GNUC__ == 4) && (__GNUC_MINOR__ >= 6)) || (__GNUC__ > 4))
+#pragma GCC diagnostic pop
+#else
+#pragma GCC diagnostic warning "-Wignored-qualifiers"
+#endif // (((__GNUC__ == 4) && (__GNUC_MINOR__ >= 6)) || (__GNUC__ > 4))
+#endif // __GNUC__
 
 
 #endif

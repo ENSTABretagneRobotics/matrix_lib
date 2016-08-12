@@ -235,7 +235,7 @@ class Eigenvalue
       for (int l = 0; l < n; l++) {
 
          // Find small subdiagonal element
-         double essai = abs(d[l]) + abs(e[l]); // modifié patr Nico le 18 juillet 2005
+         double essai = abs(d[l]) + abs(e[l]); // modified by Nico on July 18, 2005
          tst1 = max(tst1,essai);
 //                  tst1 = max(tst1,abs(d[l]) + abs(e[l]));
          int m = l;
