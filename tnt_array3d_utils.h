@@ -37,20 +37,19 @@ std::ostream& operator<<(std::ostream &s, const Array3D<T> &A)
 template <class T>
 std::istream& operator>>(std::istream &s, Array3D<T> &A)
 {
+	int M, N, K;
 
-    int M, N, K;
-
-    s >> M >> N >> K;
+	s >> M >> N >> K;
 
 	Array3D<T> B(M,N,K);
 
-    for (int i=0; i<M; i++)
-        for (int j=0; j<N; j++)
+	for (int i=0; i<M; i++)
+		for (int j=0; j<N; j++)
 			for (int k=0; k<K; k++)
-            	s >>  B[i][j][k];
+				s >>  B[i][j][k];
 
 	A = B;
-    return s;
+	return s;
 }
 
 

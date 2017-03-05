@@ -52,21 +52,20 @@ std::ostream& operator<<(std::ostream &s, const Array2D<T> &A)
 template <class T>
 std::istream& operator>>(std::istream &s, Array2D<T> &A)
 {
+	int M, N;
 
-    int M, N;
-
-    s >> M >> N;
+	s >> M >> N;
 
 	Array2D<T> B(M,N);
 
-    for (int i=0; i<M; i++)
-        for (int j=0; j<N; j++)
-        {
-            s >>  B[i][j];
-        }
+	for (int i=0; i<M; i++)
+		for (int j=0; j<N; j++)
+		{
+			s >>  B[i][j];
+		}
 
 	A = B;
-    return s;
+	return s;
 }
 
 
